@@ -1,2 +1,28 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock title %}
+{% block title %}Home{% endblock title %}
+{% block header %}RESUME CREATOR{% endblock header %}
+
+{% block content %}
+<p>Do you want to create your own resume?</p>
+<form method="post" action="submit_resume/">
+    {% csrf_token %}
+    <p>
+        Full Name:<br>
+        <input name="full_name" />
+    </p>
+    <p>
+        Date of Birth:<br>
+        <input name="date_of_birth" type="date" />
+    </p>
+    <p>
+        Hobbies:<br>
+        <input name="hobbies" />
+    </p>
+    <p>
+        Previous Work Experience:<br>
+        <input name="work_experience" type="date" />
+        <input name="work_experience" type="date" />
+    </p>
+    <input type="submit" value="Create Resume" />
+</form>
+{% endblock content %}
